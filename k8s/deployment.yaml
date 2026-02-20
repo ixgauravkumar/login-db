@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loginbbs-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: loginbbs
+  template:
+    metadata:
+      labels:
+        app: loginbbs
+    spec:
+      containers:
+      - name: loginbbs
+        image: gauravkumar4578/loginbbs:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          value: mariadb-service
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_NAME
+          value: login_db
+        - name: DB_USER
+          value: loginuser
+        - name: DB_PASSWORD
+          value: loginpass
