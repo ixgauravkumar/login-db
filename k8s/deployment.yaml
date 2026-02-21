@@ -19,7 +19,7 @@ spec:
             - containerPort: 5000
           env:
             - name: DB_HOST
-              value: "13.49.80.132"
+              value: "51.20.52.174"
 
             - name: DB_PORT
               value: "3306"
@@ -59,3 +59,4 @@ spec:
 
             - name: MAIL_USE_TLS
               value: "true"
+
